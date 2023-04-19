@@ -6,7 +6,8 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast')
 let public_folder_path = path.join(__dirname,'../public');
 let views_path = path.join(__dirname,'../templates/views');
-let partials_path = path.join(__dirname,'../templates/partials')
+let partials_path = path.join(__dirname,'../templates/partials');
+const port = process.env.PORT || 3000;
 
 //If we want to work with nodemon & hbs we need to start it like this: nodemon app.js -e js,hbs
 
@@ -92,8 +93,8 @@ app.get('*',(req,res)=>{
     });
 })
 
-app.listen(3000,()=>{
-    console.log('Listening on port 3000...');
+app.listen(port,()=>{
+    console.log(`Listening on port ${port}...`);
 })
 
 
