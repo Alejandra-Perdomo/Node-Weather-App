@@ -12,7 +12,10 @@ const forecast = (lon, lat ,callback) =>{
         callback('Coordinates must be numbers!',undefined);
       }else{
         let current = body.current;
-        callback(undefined,`Weather is ${current.weather_descriptions} and temperature is ${current.temperature}°F`);
+        callback(undefined,`Weather is ${current.weather_descriptions} and temperature is ${current.temperature}°F.
+        Humidity: ${current.humidity}%.
+        Feels like: ${current.feelslike}°F
+        `);
       }
     })
 }
